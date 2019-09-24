@@ -1,0 +1,13 @@
+---
+- name: Install apache 
+  yum:
+    name: httpd 
+    state: installed 
+
+- name: Copy files 
+  template: 
+    src: "httpd.conf"
+    dest: /tmp/
+    owner: ansible 
+    mode: 0644
+

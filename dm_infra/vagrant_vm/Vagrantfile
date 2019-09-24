@@ -1,0 +1,27 @@
+#
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Global declaration
+Vagrant.configure("2") do |config|
+
+  # maveenr-Node
+  config.vm.define "maveenr01" do |maveen|
+     maveen.vm.box = "centos/7"
+     maveen.ssh.insert_key = true
+     maveen.vm.synced_folder ".", "/vagrant", disabled: true 
+     maveen.vm.network "public_network", bridge: "Intel(R) 82579LM Gigabit Network Connection"
+     #maveen.vm.hostname = "maveenr.dc1.lab"
+
+     maveen.vm.provider :virtualbox do |v|
+        v.memory = 1524
+        v.name = "maveenr-vm01"
+     end
+     maveen.vm.provision :shell, path: "bootstrap.sh"
+  end
+  #config.vm.provision "ansible" do |ansible| 
+  #  ansible.verbose = "v" 
+  #  ansible.playbook = "playbook.yml" 
+  #end
+end 
+
