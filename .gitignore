@@ -49,7 +49,7 @@ override.tf.json
 *.class
 /bin/
 /WebContent/
-/SALESMANAGER.h2.db/
+#/SALESMANAGER.h2.db/
 /SALESMANAGER.lock.db/
 sm-shop/SALESMANAGER.lock.db
 .DS_Store
@@ -67,7 +67,7 @@ sm-shop/.project
 **/.settings
 **/.classpath
 */sm-shop/src/main/resources/*
-sm-shop/src/main/resources/database.properties
+#sm-shop/src/main/resources/database.properties
 .DS_Store
 
 
