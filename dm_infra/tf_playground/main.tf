@@ -24,6 +24,20 @@ resource "aws_security_group" "dmp_sg" {
   }
 
   ingress {
+    from_port   = 4200
+    to_port     = 4200
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 8000
+    to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
@@ -70,7 +84,7 @@ resource "aws_security_group" "dmp_sg" {
 #######################################################
 variable "subnet_pub-1a" {
   description = "Pub Subnet 1a"
-  default     = "subnet-027fafea0af1921c4"
+  default     = "subnet-0d2c04faa822bb292"
 }
 
 variable "aws_profile" {
@@ -80,7 +94,7 @@ variable "aws_profile" {
 
 variable "my_vpc" {
   description = "office or home vpc"
-  default     = "vpc-07cbe2afe815dc96d"
+  default     = "vpc-0f70d1dfb2a57ade5"
 }
 
 variable "k_pair" {
